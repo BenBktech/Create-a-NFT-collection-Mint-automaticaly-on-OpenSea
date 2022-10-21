@@ -19,4 +19,8 @@ contract NFTIsERC721A is ERC721A, Ownable {
         }
         _mint(msg.sender, quantity);
     }
+
+    function getCollectionSize() external view returns(uint256) {
+        return i_collection_size;
+    }
 }

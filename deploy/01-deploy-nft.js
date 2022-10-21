@@ -5,7 +5,7 @@ const { verify } = require("../utils/verify")
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const {deploy} = deployments;
   const {deployer} = await getNamedAccounts();
-  let args = [1000]
+  let args = [100]
 
   const NFTIsERC721A = await deploy('NFTIsERC721A', {
 		from: deployer,
