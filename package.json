@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "hardhat": "^2.11.1"
+    "@openzeppelin/contracts": "^4.7.3",
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.11.1",
+    "hardhat-coverage": "^0.8.41",
+    "hardhat-deploy": "^0.11.18"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.4.7",
@@ -21,8 +25,8 @@
     "@types/node": ">=12.0.0",
     "chai": "^4.2.0",
     "ethers": "^5.4.7",
-    "hardhat-gas-reporter": "^1.0.8",
-    "solidity-coverage": "^0.8.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.2",
     "ts-node": ">=8.0.0",
     "typechain": "^8.1.0",
     "typescript": ">=4.5.0"
