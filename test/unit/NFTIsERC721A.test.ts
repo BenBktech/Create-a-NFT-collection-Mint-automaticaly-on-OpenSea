@@ -1,4 +1,5 @@
 import { assert, expect } from "chai"
+import { BigNumber } from "ethers";
 import { network, deployments, ethers } from "hardhat"
 import { developmentChains } from "../../helper-hardhat-config"
 import {NFTIsERC721A} from '../../typechain-types/contracts/NFTIsERC721A.sol/NFTIsERC721A';
@@ -58,6 +59,11 @@ import {NFTIsERC721A} from '../../typechain-types/contracts/NFTIsERC721A.sol/NFT
                     NFTIsERC721A,
                     "NFT__ExceededSupply"
                 )
+            })
+            it('totalSupply should be 100', async function() {
+                let totalSupply: BigNumber = await NFTIsERC721A.totalSupply()
+                let totalSupplyString: string = totalSupply.toString()
+                assert.equal(totalSupplyString, '100')
             })
         })
     })
