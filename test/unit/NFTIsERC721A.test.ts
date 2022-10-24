@@ -66,4 +66,20 @@ import {NFTIsERC721A} from '../../typechain-types/contracts/NFTIsERC721A.sol/NFT
                 assert.equal(totalSupplyString, '100')
             })
         })
+
+        describe("TokenURI", function() {
+            it('it should NOT get the tokenURI of a non existent NFT', async function() {
+                await expect(NFTIsERC721A.tokenURI(200)).to.be.revertedWithCustomError(
+                    NFTIsERC721A,
+                    "NFT__NonExistentToken"
+                )
+            })
+            it('it should get the tokenURI of an existing NFT', async function() {
+                let tokenURI = await NFTIsERC721A.tokenURI(50)
+                
+                let baseURI = await NFTIsERC721A.getBaseURI();
+                let awaitedTokenURI = baseURI + "50.json"
+                assert.equal(tokenURI, awaitedTokenURI)
+            })
+        })
     })
