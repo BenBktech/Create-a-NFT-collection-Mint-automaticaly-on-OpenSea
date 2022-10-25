@@ -1,4 +1,4 @@
-# Random NFTs with VRF ChainLink
+# How to put thousands of NFTs on OpenSea with a smart contract and without a minting website
 
 ## Launch Local Blockchain
 
