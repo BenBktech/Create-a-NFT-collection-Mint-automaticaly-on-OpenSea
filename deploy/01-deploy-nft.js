@@ -5,7 +5,7 @@ const { verify } = require("../utils/verify")
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const {deploy} = deployments;
   const {deployer} = await getNamedAccounts();
-  let args = [100, "ipfs://bafybeicwjrjtms4mrcqtvba5d2dqpe3vkul7fk73utbq44mjplwlvndkqm/"]
+  let args = [process.env.NUMBER_OF_ITEMS, process.env.IPFS_ADDRESS]
 
   const NFTIsERC721A = await deploy('NFTIsERC721A', {
 		from: deployer,
